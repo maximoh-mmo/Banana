@@ -7,5 +7,3 @@
 #
  board: [ "nice_nano" ]
  shield: [ "banana_left", "banana_right" ]
- include:
-   - board: nice_nano

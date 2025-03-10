@@ -1,3 +1,4 @@
+name: zmk-keyboard-banana
 build:
   settings:
     board_root: .

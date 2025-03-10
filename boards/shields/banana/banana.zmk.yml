@@ -1,0 +1,15 @@
+file_format: "1"
+id: banana
+name: Banana
+type: shield
+url: https://github.com/maximoh-mmo/zmk-config/
+requires:
+  - nice-nano
+exposes:
+  - i2c_oled
+features:
+  - keys
+  - display
+siblings:
+  - banana_left
+  - banana_right

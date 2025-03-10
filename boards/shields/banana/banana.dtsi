@@ -3,8 +3,7 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &physical_layout0;   
-        zmk,underglow = &led_strip;
+        zmk,physical-layout = &physical_layout0;
         // Other chosen items
     };
 };
@@ -27,6 +26,7 @@
             , <&nice_nano 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&nice_nano 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&nice_nano 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
         };
     };
 

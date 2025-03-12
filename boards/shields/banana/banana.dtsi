@@ -44,7 +44,7 @@
         //  LKey 11|LKey 12|LKey 13|LKey 14|LKey 15|     RKey 11|RKey 12|RKey 13|RKey 14|RKey 15
             RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)      RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9)
         //                  LKey 16|LKey 17|LKey 18|     Rkey16|Rkey17|Rkey18|
-	                        RC(3,0) RC(3,3) RC(3,2)      RC(3,5) RC(3,8) RC(3,7)
+	                        RC(3,2) RC(3,3) RC(3,0)      RC(3,7) RC(3,8) RC(3,5)
 	 >;
     };
 };

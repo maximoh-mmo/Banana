@@ -9,7 +9,8 @@ exposes:
   - i2c_oled
 features:
   - keys
-  - display
+  - underglow
+  - studio
 siblings:
   - banana_left
   - banana_right

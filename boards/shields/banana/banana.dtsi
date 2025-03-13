@@ -6,9 +6,15 @@
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
         zmk,underglow = &led_strip;
+        zmk,battery = &vbatt;
         // Other chosen items
     };
 };
+
+/ { vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+    };
+}
 
 / {
     kscan0: kscan0 {

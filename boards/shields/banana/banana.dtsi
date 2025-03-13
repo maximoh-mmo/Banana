@@ -14,7 +14,7 @@
 / { vbatt: vbatt {
         compatible = "zmk,battery-nrf-vddh";
     };
-}
+};
 
 / {
     kscan0: kscan0 {

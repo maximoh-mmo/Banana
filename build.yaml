@@ -6,9 +6,11 @@
 # `artifact-name` to assign a name to distinguish build outputs from each other:
 #
 include:
-  - board: "nice_nano"
-    shield: "banana_left"
+  - board: nice_nano
+    shield: banana_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: "nice_nano"
-    shield: "banana_right"
+  - board: nice_nano
+    shield: banana_right
+  - board: nice_nano
+    shield: settings_reset

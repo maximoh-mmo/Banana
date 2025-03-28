@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: maximoh-mmo
+      url-base: https://github.com/maximoh-mmo
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -9,8 +11,8 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3360-driver
-      url: https://github.com/maximoh-mmo/zmk-pmw3360-driver
+    - name: zmk-pmw3360-drive
+      remote: maximoh-mmo/zmk-pmw3360-driver
       revision: main
   self:
     path: config

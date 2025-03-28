@@ -18,13 +18,8 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
-          
+          git remote set-url origin https://x-access-token:${{ secrets.BANANA }}@github.com/maximoh-mmo/zmk-pmw3360-drive.git
 
-      - name: Fetch zmk-pmw3360-drive
-        env:
-            GITHUB_TOKEN: ${{ secrets.BANANA }}
-        run: |
-          git clone https://github.com/maximoh-mmo/zmk-pmw3360-drive.git
       - name: Fetch Build Matrix
         run: |
           echo "build_matrix=$(yaml2json 'build.yaml' | jq -c .)" >> $GITHUB_ENV

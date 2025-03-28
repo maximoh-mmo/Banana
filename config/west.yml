@@ -9,5 +9,8 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: modulezmk-driver-pmw3360
+      url: https://github.com/maximoh-mmo/Trackball-sensor-zmk-module
+      revision: main
   self:
     path: config

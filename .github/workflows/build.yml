@@ -16,8 +16,8 @@ jobs:
       
       - name: Authenticate with GitHub Token
         run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "github-actions"
+          git config --global user.email "maxheinze@googlemail.com"
+          git config --global user.name "maxheinze"
 
       - name: Fetch zmk-pmw3360-drive
         run: |

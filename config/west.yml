@@ -12,7 +12,8 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-pmw3360-drive
-      url: https://github.com/maximoh-mmo/zmk-pmw3360-driver
+      remote: maximoh-mmo
       revision: main
+      path: zmk-pmw3360-drive
   self:
     path: config

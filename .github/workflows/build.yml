@@ -16,14 +16,15 @@ jobs:
       
       - name: Authenticate with GitHub Token
         run: |
-          git config --global user.email "maxheinze@googlemail.com"
-          git config --global user.name "maxheinze"
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          
 
       - name: Fetch zmk-pmw3360-drive
+        env:
+            GITHUB_TOKEN: ${{ secrets.BANANA }}
         run: |
           git clone https://github.com/maximoh-mmo/zmk-pmw3360-drive.git
-        env:
-          GITHUB_TOKEN: ${{ secrets.BANANA }}
       - name: Fetch Build Matrix
         run: |
           echo "build_matrix=$(yaml2json 'build.yaml' | jq -c .)" >> $GITHUB_ENV

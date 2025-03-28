@@ -1,5 +1,6 @@
 name: Reusable user config build
 on: [push, pull_request, workflow_dispatch]
+
 jobs:
   matrix:
     runs-on: ubuntu-22.04
@@ -21,8 +22,8 @@ jobs:
 
       - name: Fetch Build Matrix
         run: |
-          echo "build_matrix=$(yaml2json '${{ inputs."build.yaml" }}' | jq -c .)" >> $GITHUB_ENV
-          yaml2json "${{ inputs."build.yaml" }}" | jq
+          echo "build_matrix=$(yaml2json '${{ "build.yaml" }}' | jq -c .)" >> $GITHUB_ENV
+          yaml2json "${{ "build.yaml" }}" | jq
 
   build:
     runs-on: ubuntu-latest
@@ -71,8 +72,8 @@ jobs:
       - name: Copy config files to isolated temporary directory
         run: |
           if [ "${{ env.base_dir }}" != "${GITHUB_WORKSPACE}" ]; then
-            mkdir "${{ env.base_dir }}/${{ inputs.config }}"
-            cp -R ${{ inputs.config }}/* "${{ env.base_dir }}/${{ inputs.config }}/"
+            mkdir "${{ env.base_dir }}/${{ config }}"
+            cp -R ${{ config }}/* "${{ env.base_dir }}/${{ config }}/"
           fi
 
       - name: Cache west modules
@@ -95,7 +96,7 @@ jobs:
 
       - name: West Init
         working-directory: ${{ env.base_dir }}
-        run: west init -l "${{ env.base_dir }}/${{ inputs.config }}"
+        run: west init -l "${{ env.base_dir }}/${{ config }}"
 
       - name: West Update
         working-directory: ${{ env.base_dir }}
@@ -108,7 +109,7 @@ jobs:
       - name: West Build (${{ env.display_name }})
         working-directory: ${{ env.base_dir }}
         shell: sh -x {0}
-        run: west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" ${{ env.extra_west_args }} -- -DZMK_CONFIG=${{ env.base_dir }}/${{ inputs.config }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
+        run: west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" ${{ env.extra_west_args }} -- -DZMK_CONFIG=${{ env.base_dir }}/${{ config }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
       - name: ${{ env.display_name }} Kconfig file
         run: |
@@ -140,9 +141,9 @@ jobs:
           if [ -f "${{ env.build_dir }}/zephyr/zmk.uf2" ]
           then
             cp "${{ env.build_dir }}/zephyr/zmk.uf2" "${{ env.build_dir }}/artifacts/${{ env.artifact_name }}.uf2"
-          elif [ -f "${{ env.build_dir }}/zephyr/zmk.${{ inputs."bin" }}" ]
+          elif [ -f "${{ env.build_dir }}/zephyr/zmk.${{ "bin" }}" ]
           then
-            cp "${{ env.build_dir }}/zephyr/zmk.${{ inputs."bin" }}" "${{ env.build_dir }}/artifacts/${{ env.artifact_name }}.${{ inputs."bin" }}"
+            cp "${{ env.build_dir }}/zephyr/zmk.${{ "bin" }}" "${{ env.build_dir }}/artifacts/${{ env.artifact_name }}.${{ "bin" }}"
           fi
 
       - name: Archive (${{ env.display_name }})
@@ -159,6 +160,6 @@ jobs:
       - name: Merge Artifacts
         uses: actions/upload-artifact/merge@v4
         with:
-          name: ${{ inputs."firmware" }}
+          name: ${{ "firmware" }}
           pattern: artifact-*
           delete-merged: true

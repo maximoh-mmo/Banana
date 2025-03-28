@@ -5,17 +5,6 @@ jobs:
   matrix:
     runs-on: ubuntu-22.04
     name: Fetch Build Keyboards
-    inputs:
-      fallback_binary:
-        description: "Fallback binary format, if no *.uf2 file was built"
-        default: "bin"
-        required: false
-        type: string
-      archive_name:
-        description: "Archive output file name"
-        default: "firmware"
-        required: false
-      type: string
     outputs:
       build_matrix: ${{ env.build_matrix }}
     steps:

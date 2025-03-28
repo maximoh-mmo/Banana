@@ -11,9 +11,8 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3360-drive
+    - name: zmk-pmw3360-driver
       remote: maximoh-mmo
       revision: main
-      path: zmk-pmw3360-drive
   self:
     path: config

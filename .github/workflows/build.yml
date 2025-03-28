@@ -4,5 +4,6 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    env:
-      GH_TOKEN: ${{ secrets.BANANA }}
+    with:
+      env:
+        GH_TOKEN: ${{ secrets.BANANA }}

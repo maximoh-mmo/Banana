@@ -6,10 +6,10 @@
 # `artifact-name` to assign a name to distinguish build outputs from each other:
 #
 include:
-  - board: nice_nano
+  - board: nice_nano_v2
     shield: banana_left
     snippet: zmk-usb-logging
-  - board: nice_nano
+  - board: nice_nano_v2
     shield: banana_right
-  - board: nice_nano
+  - board: nice_nano_v2
     shield: settings_reset

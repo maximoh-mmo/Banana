@@ -4,3 +4,16 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    steps:
+  - name: Checkout Repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0  # Ensure full history is available
+  - name: Authenticate with GitHub Token
+    run: |
+      git config --global user.email "github-actions@github.com"
+      git config --global user.name "github-actions"
+      git remote set-url origin https://x-access-token:${{ secrets.BANANA }}@github.com/your-username/zmk-pmw3360-drive.git
+
+  - name: Fetch Repository
+    run: git fetch origin main

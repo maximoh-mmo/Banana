@@ -21,7 +21,7 @@ jobs:
 
       - name: Fetch zmk-pmw3360-drive
         run: |
-          git clone https://github.com/your-username/zmk-pmw3360-drive.git
+          git clone https://github.com/maximoh-mmo/zmk-pmw3360-drive.git
         env:
           GITHUB_TOKEN: ${{ secrets.BANANA }}
       - name: Fetch Build Matrix

@@ -9,7 +9,7 @@
     compatible = "nordic,nrf-spim";
     cs-gpios = <&gpio0 24 GPIO_ACTIVE_LOW>;
 
-    trackball: trackball@0 {
+    trackball: pmw3360@0 {
         compatible = "pixart,pmw3360";
         reg = <0>;
         irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -19,4 +19,5 @@
 
 &trackball_split {
     device = <&trackball>;
+    status = "okay";
 };

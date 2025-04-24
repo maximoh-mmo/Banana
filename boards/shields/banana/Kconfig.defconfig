@@ -10,7 +10,10 @@ endif
 
 if SHIELD_BANANA_LEFT || SHIELD_BANANA_RIGHT
 
-config ZMK_SPLIT
+config ZMK_POINTING
     default y
 
+config SPI
+    default y
+    
 endif

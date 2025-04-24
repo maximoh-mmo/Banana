@@ -12,8 +12,10 @@ if SHIELD_BANANA_LEFT || SHIELD_BANANA_RIGHT
 
 config ZMK_POINTING
     default y
+endif
+
+if SHIELD_BANANA_RIGHT
 
 config SPI
-    default y
-    
+    default y    
 endif

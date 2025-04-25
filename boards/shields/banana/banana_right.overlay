@@ -23,4 +23,5 @@
 
 &trackball_split {
     device = <&pmw3360>;
+    status = "okay";
 };

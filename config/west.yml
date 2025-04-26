@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: maximoh-mmo
       url-base: https://github.com/maximoh-mmo
+    - name: bullwinkle3000
+      url-base: https://github.com/bullwinkle3000
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:

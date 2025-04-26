@@ -22,7 +22,7 @@ manifest:
     ## ZMK from petejohanson fork
     - name: zmk
       remote: zmkfirmware
-      revision: feat/pointers-move-scroll
+      revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: bullwinkle3000

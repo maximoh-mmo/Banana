@@ -11,8 +11,11 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3360-driver
-      remote: maximoh-mmo
-      revision: main
+    - name: zmk-pmw3610-driver
+      remote: bullwinkle3000
+      revision: pmw3660
+    #- name: zmk-pmw3360-driver
+    #  remote: maximoh-mmo
+    #  revision: main
   self:
     path: config

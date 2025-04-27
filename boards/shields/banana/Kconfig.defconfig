@@ -16,12 +16,3 @@ config ZMK_POINTING
 config SPI
     default y    
 endif
-
-if SHIELD_BANANA_RIGHT
-
-config PMW3360_LOG_LEVEL_DBG
-    default y
-
-config PMW3360_LOG_LEVEL_INF
-    default y
-endif

@@ -8,6 +8,7 @@
         zmk,physical-layout = &physical_layout0;
         zmk,underglow = &led_strip;
         zmk,battery = &vbatt;
+        zmk,input-listner = &trackball_listener;
         // Other chosen items
     };
 };

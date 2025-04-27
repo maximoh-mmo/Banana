@@ -1,4 +1,5 @@
 #include "banana.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 
 &spi1 {
@@ -14,6 +15,10 @@
             reg = <0>;
             irq-gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
             spi-max-frequency = <2000000>;
+            cpi = <600>;
+            evt-type = <INPUT_EV_REL>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
     };
 };
 

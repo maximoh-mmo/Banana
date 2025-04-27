@@ -24,3 +24,4 @@ config PMW3360_LOG_LEVEL_DBG
 
 config PMW3360_LOG_LEVEL_INF
     default y
+endif

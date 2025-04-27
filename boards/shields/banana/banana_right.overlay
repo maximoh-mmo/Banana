@@ -13,8 +13,8 @@
     pmw3360: pmw3360@0 {
             compatible = "pixart,pmw3360";
             reg = <0>;
-            irq-gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_DOWN)>;
-            spi-max-frequency = <2000000>;
+            irq-gpios = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+            spi-max-frequency = <1000000>;
             cpi = <600>;
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_X>;

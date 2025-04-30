@@ -21,6 +21,6 @@ manifest:
     
     - name: zmk-pmw3360-driver
       remote: maximoh-mmo
-      revision: main
+      revision: pmw3366
   self:
     path: config

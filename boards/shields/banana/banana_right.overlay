@@ -8,8 +8,8 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-    pmw3360: pmw3360@0 {
-            compatible = "pixart,pmw3360";
+    pmw3366: pmw3366@0 {
+            compatible = "pixart,pmw3366";
             reg = <0>;
             irq-gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
             spi-max-frequency = <1000000>;
@@ -22,6 +22,6 @@
 };
 
 &trackball_split {
-    device = <&pmw3360>;
+    device = <&pmw3366>;
     status = "okay";
 };
